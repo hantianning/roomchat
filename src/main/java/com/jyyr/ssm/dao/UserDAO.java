@@ -19,5 +19,5 @@ public interface UserDAO {
 
     List<User> selectByPhone(String phone);
 
-    List<User> selectManagerByPhone(String phone);
+
 }

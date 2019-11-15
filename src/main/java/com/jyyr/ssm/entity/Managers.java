@@ -1,9 +1,9 @@
 package com.jyyr.ssm.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class Managers implements Serializable {
-
 
     private static final long serialVersionUID = 5467444998633711538L;
     private Integer mid;
@@ -13,12 +13,15 @@ public class Managers implements Serializable {
     private Integer managerlid;
     private String salt;
     private String positionname;
+    private Integer gender;
+    private Date birth;
+
 
     public Managers() {
         super();
     }
 
-    public Managers(Integer mid, String managername, String managerpassword, String managerphone, Integer managerlid, String salt, String positionname) {
+    public Managers(Integer mid, String managername, String managerpassword, String managerphone, Integer managerlid, String salt, String positionname, Integer gender, Date birth) {
         super();
         this.mid = mid;
         this.managername = managername;
@@ -27,19 +30,8 @@ public class Managers implements Serializable {
         this.managerlid = managerlid;
         this.salt = salt;
         this.positionname = positionname;
-    }
-
-    @Override
-    public String toString() {
-        return "managers{" +
-                "mid=" + mid +
-                ", managername='" + managername + '\'' +
-                ", managerpassword='" + managerpassword + '\'' +
-                ", managerphone='" + managerphone + '\'' +
-                ", managerlid=" + managerlid +
-                ", salt='" + salt + '\'' +
-                ", positionname='" + positionname + '\'' +
-                '}';
+        this.gender = gender;
+        this.birth = birth;
     }
 
     public Integer getMid() {
@@ -96,5 +88,36 @@ public class Managers implements Serializable {
 
     public void setPositionname(String positionname) {
         this.positionname = positionname;
+    }
+
+    public Integer getGender() {
+        return gender;
+    }
+
+    public void setGender(Integer gender) {
+        this.gender = gender;
+    }
+
+    public Date getBirth() {
+        return birth;
+    }
+
+    public void setBirth(Date birth) {
+        this.birth = birth;
+    }
+
+    @Override
+    public String toString() {
+        return "Managers{" +
+                "mid=" + mid +
+                ", managername='" + managername + '\'' +
+                ", managerpassword='" + managerpassword + '\'' +
+                ", managerphone='" + managerphone + '\'' +
+                ", managerlid=" + managerlid +
+                ", salt='" + salt + '\'' +
+                ", positionname='" + positionname + '\'' +
+                ", gender=" + gender +
+                ", birth=" + birth +
+                '}';
     }
 }

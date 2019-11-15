@@ -11,7 +11,7 @@ layui.use(['form', 'layedit', 'laydate'], function(){
     //自定义验证规则
     form.verify({
        username: [
-            /^[a-zA-Z0-9_]{4,12}$/,
+            /^[a-zA-Z0-9_]{3,12}$/,
                '用户名必须4-8位的字母、数字或下划线哦'
         ]
         ,password: [
@@ -34,6 +34,7 @@ layui.use(['form', 'layedit', 'laydate'], function(){
     //监听提交
     form.on('submit(register)', function(data) {
         var user = data.field;
+        user.birth = new Date(user.birth);
         var url = 'user/regInfo.do';
         console.log('>>>  ', user);
         $.ajax({

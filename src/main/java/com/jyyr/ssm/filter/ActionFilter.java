@@ -19,17 +19,18 @@ public class ActionFilter implements Filter {
             accessibleEnter.add("regNow.do");
             accessibleEnter.add("login.do");
             accessibleEnter.add("regInfo.do");
+            accessibleEnter.add("logManager.do");
     }
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-//        System.out.println("ActionFilter.doFilter()");
+        System.out.println("ActionFilter.doFilter()");
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         String uri = request.getRequestURI();
-//        System.out.println(" ================过滤器路径 uri "+ uri);
+        System.out.println(" ================过滤器路径 uri "+ uri);
         String[] pathArray = uri.split("/");
         String file = pathArray[pathArray.length-1];
-//        System.out.println("====访问路径==== " + file);
+        System.out.println("====访问路径==== " + file);
         if(accessibleEnter.contains(file)){
             filterChain.doFilter(servletRequest,servletResponse);
             return;
@@ -38,6 +39,9 @@ public class ActionFilter implements Filter {
             HttpSession session = request.getSession();
             if(session.getAttribute("uid") != null){
                 //已登录放行
+                filterChain.doFilter(servletRequest,servletResponse);
+                return;
+            }else if(session.getAttribute("manager") != null){
                 filterChain.doFilter(servletRequest,servletResponse);
                 return;
             }else{

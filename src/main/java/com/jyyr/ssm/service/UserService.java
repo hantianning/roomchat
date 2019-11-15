@@ -14,5 +14,5 @@ public interface UserService {
     /*通过username，password登录*/
     User login(String phone,String password)throws UserNotFoundException, PasswordNotMatchException;
 
-    User logManager(String phone, String password) throws UserNotFoundException, PasswordNotMatchException;
+
 }

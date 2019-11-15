@@ -2,13 +2,16 @@ package com.jyyr.ssm.entity;
 
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class User implements Serializable {
 
+
+    private static final long serialVersionUID = 2663018816850422305L;
     private Integer id;
     private String username;
     private String password;
-    private String birth;
+    private Date birth;
     private String phone;
     private Integer gender;
     private String salt;
@@ -16,7 +19,7 @@ public class User implements Serializable {
     public User() {
     }
 
-    public User(Integer id, String username, String password, String birth, String phone, Integer gender, String salt) {
+    public User(Integer id, String username, String password, Date birth, String phone, Integer gender, String salt) {
         super();
         this.id = id;
         this.username = username;
@@ -64,11 +67,11 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public String getBirth() {
+    public Date getBirth() {
         return birth;
     }
 
-    public void setBirth(String birth) {
+    public void setBirth(Date birth) {
         this.birth = birth;
     }
 

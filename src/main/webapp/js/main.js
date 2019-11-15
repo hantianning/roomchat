@@ -6,8 +6,8 @@ layui.use(['form'], function(){
     //自定义验证规则
     form.verify({
         phone: [
-            /^[a-zA-Z0-9_]{4,12}$/,
-            '用户名必须4-8位的字母、数字和下划线哦'
+            /^1[3456789]\d{9}$/
+            ,'手机号码格式错误！'
         ]
         ,password: [
             /^(?!([a-zA-Z]+|\d+)$)[a-zA-Z\d]{6,12}$/
@@ -64,16 +64,19 @@ layui.use(['form'], function(){
     //监听管理员登录
     form.on('submit(logManager)', function(data){
         console.log(data.field);
-        var user = data.field;
-        var url = 'user/logManager.do';
-        console.log('>>>  ',user);
+        var manager ={
+            managerphone:data.field.phone,
+            managerpassword:data.field.password
+        };
+        var url = 'managers/logManager.do';//managerphone managerpassword
+        console.log('>>>  ',manager);
         $.ajax({
             url : url,
-            data: user,
+            data: manager,
             type: "POST",
             dataType: "JSON",
             success: function (result) {
-                console.log('注册返回值',result)
+                console.log('登录',result)
                 if (result.state == 200){
                     layer.msg('登录成功',{
                         //1:正确；2:错误；3:询问；4:锁定；5:失败；6：成功；7:警告；16：加载
@@ -81,7 +84,7 @@ layui.use(['form'], function(){
                         time : 1000
                     })
                     setTimeout(function () {
-                        window.location.href = 'index.do';
+                        window.location.href = 'manager_index.do';
                     },1000)
                     return false;
                 }else if (result.state == 3002 || result.state == 3004) {

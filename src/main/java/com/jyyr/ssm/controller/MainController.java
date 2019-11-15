@@ -22,4 +22,9 @@ public class MainController {
     public String index(){
         return "index";
     }
+
+    @RequestMapping("manager_index.do")
+    public String manager_index(){
+        return "manager_index";
+    }
 }
