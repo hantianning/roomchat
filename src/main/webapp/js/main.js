@@ -84,7 +84,7 @@ layui.use(['form'], function(){
                         time : 1000
                     })
                     setTimeout(function () {
-                        window.location.href = 'manager_index.do';
+                        window.location.href = 'managerIndex.do';
                     },1000)
                     return false;
                 }else if (result.state == 3002 || result.state == 3004) {

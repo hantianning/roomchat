@@ -37,11 +37,8 @@ public class ActionFilter implements Filter {
         }else{
             //判断是否登录
             HttpSession session = request.getSession();
-            if(session.getAttribute("uid") != null){
+            if(session.getAttribute("uid") != null || session.getAttribute("manager") != null){
                 //已登录放行
-                filterChain.doFilter(servletRequest,servletResponse);
-                return;
-            }else if(session.getAttribute("manager") != null){
                 filterChain.doFilter(servletRequest,servletResponse);
                 return;
             }else{

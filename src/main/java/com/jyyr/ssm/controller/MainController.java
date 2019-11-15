@@ -23,8 +23,8 @@ public class MainController {
         return "index";
     }
 
-    @RequestMapping("manager_index.do")
+    @RequestMapping("managerIndex.do")
     public String manager_index(){
-        return "manager_index";
+        return "managerIndex";
     }
 }
