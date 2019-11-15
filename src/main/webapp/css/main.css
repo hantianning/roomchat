@@ -1,0 +1,62 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../images/aaaa.jpg");
+    background-size: 100% 110%;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    position: relative;
+}
+
+.mainNavigator {
+    position: absolute;
+    width: 500px;
+    height: 300px;
+    background-color: rgba(8, 56, 102, 0.8);
+    border-radius: 5px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-250px, -150px);
+}
+
+form {
+    margin-top: 70px;
+}
+
+.layui-form-label {
+    color: white;
+}
+
+.layui-form-item {
+    width: 80%;
+    margin: 30px 0 20px 15px;
+}
+
+.layui-btn {
+    margin: 0 auto;
+}
+
+.log_div {
+    margin: 0 auto;
+}
+
+.log_btn {
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reg_nav {
+    height: 20px;
+    width: 60%;
+    margin: 0 auto;
+    text-align: right;
+}
+
+ .reg_nav a{
+    cursor: pointer;
+    text-decoration: none;
+    out-line: none;
+}

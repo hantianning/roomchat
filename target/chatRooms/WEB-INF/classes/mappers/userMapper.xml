@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jyyr.ssm.dao.UserDAO">
+    <resultMap id="BaseResultMap"
+               type="com.jyyr.ssm.entity.User">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="username" jdbcType="VARCHAR" property="username"/>
+        <result column="password" jdbcType="VARCHAR" property="password"/>
+        <result column="birth" jdbcType="VARCHAR" property="birth"/>
+        <result column="gender" jdbcType="INTEGER" property="gender"/>
+        <result column="phone" jdbcType="VARCHAR" property="phone"/>
+        <result column="salt" jdbcType="VARCHAR" property="salt"/>
+    </resultMap>
+
+    <!--User selectByUsername(String username);-->
+    <select id="selectByUsername" resultType="com.jyyr.ssm.entity.User">
+        SELECT
+            id,username,password,phone,gender,birth,salt
+        FROM
+            user
+        WHERE
+            username = #{username}
+    </select>
+
+    <!--List<User> selectByPhone(String phone);-->
+    <select id="selectByPhone" resultType="com.jyyr.ssm.entity.User">
+        SELECT
+            id,username,password,phone,gender,birth,salt
+        FROM
+            user
+        WHERE
+            phone = #{phone}
+    </select>
+
+
+    <!--Integer insertUserInfo(User user);-->
+    <insert id="insertUserInfo" parameterType="com.jyyr.ssm.entity.User" >
+        INSERT INTO
+            user
+            (username,password,birth,gender,phone,salt)
+        VALUE
+            (#{username},#{password},#{birth},#{gender},#{phone},#{salt})
+    </insert>
+
+
+</mapper>

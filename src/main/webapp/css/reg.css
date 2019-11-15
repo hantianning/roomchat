@@ -1,0 +1,53 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../images/aaaa.jpg");
+    background-size: 100% 110%;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    position: relative;
+}
+
+.mainNavigator {
+    position: absolute;
+    width: 500px;
+    height: 600px;
+    background-color: rgba(8, 56, 102, 0.8);
+    border-radius: 5px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-250px, -300px);
+}
+
+form {
+    margin-top: 70px;
+}
+
+.layui-form-label {
+    color: white;
+}
+
+.valList {
+    width: 80%;
+    margin: 30px 0 20px 15px;
+}
+
+.layui-btn {
+    margin: 0 auto;
+}
+
+.log_div {
+    margin: 0 auto;
+}
+
+.log_btn {
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.layui-input-block{
+    color: white;
+}
