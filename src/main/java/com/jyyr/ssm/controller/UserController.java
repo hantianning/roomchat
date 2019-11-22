@@ -2,6 +2,7 @@ package com.jyyr.ssm.controller;
 
 import com.jyyr.ssm.entity.ResponseResult;
 import com.jyyr.ssm.entity.User;
+import com.jyyr.ssm.service.UserService;
 import com.jyyr.ssm.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,7 +19,7 @@ import javax.servlet.http.HttpSession;
 public class UserController extends BaseController{
 
     @Autowired
-    private UserServiceImpl userService;
+    private UserService userService;
 
 
     @ResponseBody

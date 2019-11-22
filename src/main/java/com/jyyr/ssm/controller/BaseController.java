@@ -22,5 +22,4 @@ public abstract class BaseController {
             return new ResponseResult<Void>(6060,e);
         }
     }
-
 }

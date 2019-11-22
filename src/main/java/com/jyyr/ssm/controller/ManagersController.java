@@ -2,6 +2,7 @@ package com.jyyr.ssm.controller;
 
 import com.jyyr.ssm.entity.Managers;
 import com.jyyr.ssm.entity.ResponseResult;
+import com.jyyr.ssm.service.ManagersService;
 import com.jyyr.ssm.service.impl.ManagersServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,7 +18,7 @@ import javax.servlet.http.HttpSession;
 public class ManagersController {
 
     @Autowired
-    private ManagersServiceImpl managersService;
+    private ManagersService managersService;
 
 
     @ResponseBody
@@ -27,6 +28,11 @@ public class ManagersController {
         Managers managers = managersService.logManager(managerphone, managerpassword);
         session.setAttribute("manager",managers);
         return new ResponseResult<Void>();
+    }
+
+    @RequestMapping(value = "crawlerTest.do")
+    public String crawlerTest(){
+        return "crowlerTest";
     }
 }
 
